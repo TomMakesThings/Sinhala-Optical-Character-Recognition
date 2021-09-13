@@ -13,3 +13,6 @@ KNN works by majority voting as it assigns a class based on its k closest points
 * Adds padding to image to increase edge around the characters and apply a Gaussian blur
 * Convert the image from colour to grayscale
 * Apply an Otsu threshold
+* Segment the characters in the image using bounding boxes
+* Resize each character to 20 × 20 pixels
+* Apply a binary threshold
