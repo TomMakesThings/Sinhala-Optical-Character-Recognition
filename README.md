@@ -8,3 +8,8 @@ The Sinhalese script is used to write Sinhalese, the national language of Sri 
 
 ### K-Nearest Neighbors (KNN)
 KNN works by majority voting as it assigns a class based on its k closest points.
+
+* Convert from PDF to image
+* Adds padding to image to increase edge around the characters and apply a Gaussian blur
+* Convert the image from colour to grayscale
+* Apply an Otsu threshold
