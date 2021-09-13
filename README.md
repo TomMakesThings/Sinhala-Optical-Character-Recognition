@@ -1,10 +1,11 @@
-# Sinhala-Optical-Character-Recognition
+# Sinhala Optical Character Recognition
 
-### Optical Character Recognition
-An Optical Character Recognition (OCR) system is software that can take images of printed or handwritten characters and extract machine readable text.
+### About
+The purpose of this project is to create a basic optical character recognition (OCR) system that can take images of printed Sinhalese characters, the national language of Sri Lanka, and to convert them to machine readable text using a KNN classifier.
 
-### The Sinhalese Script
-The Sinhalese script is used to write Sinhalese, the national language of Sri Lanka. It contains 58 letters of which 42 are consonants and 16 are vowels.
+---
+
+images of text are inputted and the system will identify regions of interest (ROIs) which it will attempt to classify.
 
 ### K-Nearest Neighbors (KNN)
 KNN works by majority voting as it assigns a class based on its k closest points.
