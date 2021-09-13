@@ -17,3 +17,7 @@ Extract character images for training the OCR model:
 * Segment the characters in the image using bounding boxes
 * Resize each character to 20 × 20 pixels
 * Apply a binary threshold
+
+### Evaluation Metrics
+Levenshtein distance
+Jaro–Winkler distance
