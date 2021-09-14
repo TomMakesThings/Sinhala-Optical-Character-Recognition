@@ -18,7 +18,12 @@ Next the image is converted to boolean and regions of interest (ROIs) are identi
 KNN is a type of classifier that uses majority voting to assigns a class to each data point based on its k closest points. After the extracted ROIs are matched to their labels, the KNN classifier is fit to the training data. Then the KNN is used to make a prediction on the test data and the predicted and expected text compared.
 
 To quantify the performance, both the Levenshtein distance and Jaro–Winkler distance are calculated.
-```python
+```
 Prediction: ථළභඦඹශඝඖරඨෆඦඤදධඣඏඋඏධටඝෆඵයවෂෂඉඅටකචඤ
 Actual:     ථළභඦඹශඝඖරඨෆඦඤදධඣඏඋඏධටඝෆඵයවෂෂඉආකචඤඏ
+```
+
+```
+Levenshtein distance: 3
+Jaro–Winkler distance: 0.961
 ```
