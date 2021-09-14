@@ -5,12 +5,27 @@ The aim of this project was to experiment creating a basic optical character rec
 
 ---
 
-## Training Data
-To generate training and testing data, I created PDFs of Sinhalese characters with different font weights and matching text files to store the ground truth. After reading the PDFs into the notebook, they are converted to images.
+## Training and Testing Data
+To generate training and testing data, I created PDFs of Sinhalese characters with different font weights and matching text files to store the ground truth. After reading the PDFs into the [notebook](https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb), they are converted to images.
 
 For each image, padding is added to increase the margin of the page and a Gaussian blur applied to merge parts of characters that are close together. The image is then converted to grayscale and adaptive thresholding applied using Otsu's method to separate the background from the foreground.
 
 Next the image is converted to boolean and regions of interest (ROIs) are identified. ROIs are first sorted by their y coordinates to find characters on the same line, and then by x to determine the order on the page. Finally, each ROI resized to 20 x 20 pixels as the classifier requires all input images to be the same size.
+
+<a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Training-ROIs.png"></a>
+
+<details open>
+  <summary><b>Training Image Extraction</b></summary>
+  <a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Training-Image-Extraction.png" width=800></a>
+  <a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Training-ROI-Threshold.png" width=500></a>
+</details>
+
+<details open>
+  <summary><b>Testing Image Extraction</b></summary>
+  <a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Testing-Image-Extraction.png" width=800></a>
+</details>
+
+####
 
 ---
 
@@ -27,3 +42,5 @@ Actual:     ථළභඦඹශඝඖරඨෆඦඤදධඣඏඋඏධටඝ�
 Levenshtein distance: 3
 Jaro–Winkler distance: 0.961
 ```
+
+<a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Confusion-Matrix.png" width=800></a>
