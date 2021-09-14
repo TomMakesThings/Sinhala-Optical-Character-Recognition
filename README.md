@@ -27,20 +27,22 @@ Finally, each ROI resized to 20 x 20 pixels. This is because the classifier requ
 ## K-Nearest Neighbors (KNN)
 KNN is a type of classifier that uses majority voting to assigns a class to each data point based on its k closest points. After the extracted ROIs are matched to their labels, the KNN classifier is fit to the training data. Then the KNN is used to make a prediction on the test data and the predicted and expected text compared.
 
-<details>
-  <summary><b>Testing Image Extraction</b></summary>
-  <a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Testing-Image-Extraction.png" width=800></a>
-</details>
+<a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Testing-Boxes.png" width=400></a>
 
-To quantify the performance, both the Levenshtein distance and Jaro–Winkler distance are calculated.
 ```
 Prediction: ථළභඦඹශඝඖරඨෆඦඤදධඣඏඋඏධටඝෆඵයවෂෂඉඅටකචඤ
 Actual:     ථළභඦඹශඝඖරඨෆඦඤදධඣඏඋඏධටඝෆඵයවෂෂඉආකචඤඏ
 ```
 
+With OCR, image-label shifts are a common occurrence. For example, at the end `අ ට ක ච ඤ` was predicted when the expected text was `ආ ක ච ඤ ඏ`. In this case the label at index 1 would not match image 1, label 2 would match image 2 etc. This means a measure such as accuracy is not suitable to measure performance.
+
+Instead the Levenshtein distance and Jaro distance are calculated. The Levenshtein distance counts the number of edits (insertions, deletions and substitutions) required to convert the prediction to the actual text, while the Jaro distance is a string-edit distance between [0,1], where 0 represents dissimilar strings and 1 represents identical strings.
+
 ```
 Levenshtein distance: 3
-Jaro–Winkler distance: 0.961
+Jaro distance: 0.961
 ```
+
+To evaluate the quality of the classifier's output, a confusion matrix is plotted. This reveals how good the classifier is at predicting each character (true positives are plotted on the diagonal line) and for those it get incorrect, which ones it predicts instead.
 
 <a href="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/SinhalaOCR.ipynb"><img src="https://github.com/TomMakesThings/Sinhala-Optical-Character-Recognition/blob/main/Images/Confusion-Matrix.png" width=800></a>
