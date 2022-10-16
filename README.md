@@ -1,4 +1,11 @@
-# Sinhala Script Optical Character Recognition
+<div align="center">
+  <h1>Sinhala Script Optical Character Recognition</h1>
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/61354833?v=4&h=100&w=100&fit=cover&mask=circle&maxage=7d">
+  <p><b>Code by <a href="https://github.com/TomMakesThings">TomMakesThings</a></b></p>
+  <p><b><sub>June 2020</sub></b></p>
+</div>
+
+---
 
 ## About
 The aim of this project was to experiment creating a basic optical character recognition (OCR) system that can take images of printed Sinhalese characters, Sinhala being the national language of Sri Lanka, and to convert them to machine readable text using a KNN classifier.
